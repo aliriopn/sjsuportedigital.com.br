@@ -1,0 +1,493 @@
+/*
+ * -------------------------------------------
+ * Estilos Gerais e Variáveis
+ * -------------------------------------------
+ */
+
+:root {
+    --primary-color: #5C4033; /* Um marrom escuro e rico */
+    --secondary-color: #8D6E63; /* Um marrom médio para botões e links */
+    --accent-color: #E6B0A9; /* Um tom de rosa pálido/quase rosado para destaque */
+    --text-color: #333;
+    --light-text-color: #f4f4f4;
+    --background-light: #FFF9F3; /* Um fundo muito claro, quase off-white */
+    --background-dark: #3E2723; /* Marrom bem escuro para o rodapé */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--background-light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.8rem;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 50px; /* Borda mais arredondada para um visual moderno */
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase; /* Deixa o texto em maiúsculas */
+    letter-spacing: 1px; /* Adiciona um pequeno espaçamento entre as letras */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Efeito de sombra ao passar o mouse */
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--background-light);
+    color: var(--primary-color);
+}
+
+.btn-secondary {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: 2px solid var(--accent-color);
+}
+
+.btn-secondary:hover {
+    background-color: #fff;
+    color: var(--accent-color);
+}
+
+
+/*
+ * -------------------------------------------
+ * Seção de Cabeçalho (Header)
+ * -------------------------------------------
+ */
+.header {
+    background-color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Sombra mais suave */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container img {
+    height: 100px; /* Sua regra para a logo */
+    width: auto;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem; /* Aumenta o espaçamento entre os links */
+}
+
+.nav-menu a {
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--text-color); /* Usa a cor de texto padrão */
+    position: relative;
+    padding-bottom: 5px; /* Espaço para o sublinhado animado */
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--secondary-color); /* Muda a cor ao passar o mouse */
+}
+
+/* Sublinhado animado */
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    transform: scaleX(1); /* Faz o sublinhado aparecer da esquerda para a direita */
+}
+
+/*
+ * -------------------------------------------
+ * Seção Principal (Hero)
+ * -------------------------------------------
+ */
+.hero {
+    padding: 80px 0;
+    background-color: var(--background-light);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: right;
+}
+
+.hero-image img {
+    max-width: 85%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/*
+ * -------------------------------------------
+ * Seção Sobre (Aprimorada)
+ * -------------------------------------------
+ */
+.sobre {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.sobre-container {
+    display: flex;
+    align-items: center;
+    gap: 60px; /* Aumenta o espaçamento */
+}
+
+.sobre-image {
+    flex-shrink: 0; /* Impede que a imagem encolha */
+    text-align: center;
+}
+
+.sobre-image img {
+    max-width: 450px; /* Tamanho ligeiramente maior para a imagem */
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+}
+
+.sobre-content {
+    flex: 1;
+}
+
+.sobre-content h2 {
+    text-align: left;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem; /* Título um pouco maior */
+}
+
+.sobre-content .intro-text {
+    font-size: 1.15rem; /* Texto de introdução um pouco maior */
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 2.5rem;
+}
+
+.destaques-sobre {
+    display: grid;
+    grid-template-columns: 1fr; /* Uma coluna em mobile */
+    gap: 30px;
+    margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .destaques-sobre {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas em desktop */
+    }
+}
+
+.destaque-item {
+    background-color: var(--background-light);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: flex-start; /* Alinha o ícone e o texto no topo */
+    gap: 15px;
+}
+
+.destaque-item .icon {
+    font-size: 2rem; /* Tamanho do ícone */
+    line-height: 1;
+    color: var(--secondary-color);
+}
+
+.destaque-item h3 {
+    font-size: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    text-align: left; /* Garante que o título esteja alinhado à esquerda */
+}
+
+.destaque-item p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+
+/*
+ * -------------------------------------------
+ * Seção Serviços
+ * -------------------------------------------
+ */
+.servicos {
+    padding: 80px 0;
+    background-color: var(--background-light);
+}
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.servico-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Sombra mais destacada */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--primary-color); /* Uma linha superior para destaque */
+}
+
+.servico-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra mais forte no hover */
+}
+
+.servico-item h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.servico-icone {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: var(--secondary-color); /* Esta linha define a cor dos ícones! */
+}
+
+/*
+ * -------------------------------------------
+ * Seção Contato
+ * -------------------------------------------
+ */
+.contato {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 60px 0;
+}
+
+.contato h2 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.contato p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+}
+
+.contato .btn-secondary {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+.contato .btn-secondary:hover {
+    background-color: #fff;
+    color: var(--accent-color);
+}
+
+/*
+ * -------------------------------------------
+ * Rodapé (Footer)
+ * -------------------------------------------
+ */
+.footer {
+    background-color: var(--background-dark);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+}
+
+.footer p {
+    margin: 0.5rem 0;
+}
+
+/*
+ * -------------------------------------------
+ * Responsividade (Mobile First)
+ * -------------------------------------------
+ */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .header-container {
+        flex-direction: column;
+    }
+
+    .nav-menu {
+        display: none;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .nav-menu.active {
+        display: block;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 10px;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: var(--primary-color);
+        margin-bottom: 5px;
+        transition: transform 0.3s ease;
+    }
+
+    .hero-container, .sobre-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content, .sobre-content {
+        order: 2; /* Move o conteúdo para baixo */
+    }
+    
+    .hero-image, .sobre-image {
+        order: 1; /* Move a imagem para cima */
+    }
+    
+    .sobre-content h2 {
+        text-align: center;
+    }
+    
+    .destaque-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .destaque-item h3 {
+        font-size: 1.15rem;
+    }
+
+    .destaque-item p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Esconde o menu toggle em telas maiores */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+}
